@@ -12,8 +12,21 @@ function compute()
         p.focus();
         return false;
     }
+    if(p.value == 0){
+        alert("Invalid input: Please enter the amount greater than 0"); 
+        p.focus(); 
+        return false; 
+    }
+    if(p.value < 0){
+        alert("Invalid input: Please enter positive values"); 
+        p.focus(); 
+        return false; 
+    }
     let interest = Math.round(p.value * (r.value/100) * y.value); 
-    res.innerHTML = "If you deposit " + p.value + "<br/>" + "at an interest rate of " + r.value + "% <br/>" + "You will receive an amount of " + interest + "<br/>"+ "in the year " + future + "<br/>";
+    res.innerHTML = "If you deposit " + "<span style='background-color:yellow'>" + p.value + "</span>" +"<br/>" 
+                    + "at an interest rate of " + "<span style='background-color:yellow'>" + r.value + "%" + "</span>" + "<br/>" 
+                    + "You will receive an amount of " +"<span style='background-color:yellow'>"  + interest + "</span>" + "<br/>"
+                    + "in the year " + "<span style='background-color:yellow'>" + future + "</span>" + "<br/>";
     
    
 
